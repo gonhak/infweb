@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Inf</title>
+    <title>3D Informatyka</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="https://icons-for-free.com/iconfiles/png/512/desktop+laptop+mac+monitor+pc+screen+icon-1320084900181856200.png">
+    <script src="https://kit.fontawesome.com/4edfb60331.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <nav class="nav">
+        <div class="nav__colapse">
+            <i class="fas fa-chevron-right nav__colapse__icon"></i>
+        </div>
+
+        <div class="nav__icons">
+            <div class="nav__icons__icon">
+                <i class="fab fa-python nav__icons__icon__fa"></i>
+            </div>
+
+            <div class="nav__icons__icon">
+                <i class="fab fa-php nav__icons__icon__fa"></i>
+            </div>
+
+            <div class="nav__icons__icon">
+                <i class="fas fa-search nav__icons__icon__fa"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="line"></div>
+
+    <div class="container">
+        <div class="card">
+                <div class="card-image">
+                    <img class="img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimages_k%2Fpython-logo-transparent%2Fpython-logo-transparent-1.png&f=1&nofb=1" style="max-width: 390px;">
+                </div>
+                    <h4>Lekcje python</h4>
+                <div class="card-content">
+                    <p>Przyspieszony kurs z języka programowania python</p>
+                </div>
+                <div class="card-action">
+                    <button class="btn btn-lg btn-success" onclick="window.location.href='courses/pycourses.html';">
+                        <h6 class="link">Przejdź do kursu</h6>
+                    </button>
+                </div>
+        </div>
+            <div class="card">
+                <div class="card-image">
+                    <img class="img" src="https://cdn.freebiesupply.com/logos/large/2x/php-logo-png-transparent.png" style="max-width: 390px;">
+                </div>
+                    <h4>Lekcje php</h4>
+                <div class="card-content">
+                    <p>Przyspieszony kurs z języka programowania php</p>
+                </div>
+                <div class="card-action">
+                    <button class="btn btn-lg btn-success" onclick="window.location.href='courses/phpcourses.html';">
+                        <h6 class="link">Przejdź do kursu</h6>
+                    </button>
+                </div>
+            </div>
+    </div>
+
+    <div class="loginScreen">
+        <div class="loginScreen__box">
+            <input class="loginScreen__box__input" type="text" placeholder="Wprowadź hasło...">
+            <button class="loginScreen__box__button">Zaloguj</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
