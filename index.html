@@ -8,93 +8,160 @@
     <title>3D Informatyka</title>
     <!-- Ikona strony -->
     <link rel="icon"
-    href="https://icons-for-free.com/iconfiles/png/512/desktop+laptop+mac+monitor+pc+screen+icon-1320084900181856200.png">
+        href="https://icons-for-free.com/iconfiles/png/512/desktop+laptop+mac+monitor+pc+screen+icon-1320084900181856200.png">
     <!-- Ikony -->
     <script src="https://kit.fontawesome.com/4edfb60331.js" crossorigin="anonymous"></script>
     <!-- Czcionki -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Grechen+Fuemen&family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Grechen+Fuemen&family=Montserrat:ital,wght@1,100&display=swap"
+        rel="stylesheet">
     <!-- Style -->
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
-    <!-- <div class="loginScreen">
+    <div class="loginScreen">
         <div class="loginScreen__box">
             <input class="loginScreen__box__input" type="text" placeholder="Wprowadź hasło...">
             <button class="loginScreen__box__button">Zaloguj</button>
         </div>
-    </div> -->
+    </div>
 
     <nav class="nav">
         <div class="nav__box">
             <div class="nav__colapse">
-                <i class="fas fa-chevron-right nav__colapse__icon"></i>
+                <i class="fas fa-chevron-right nav__colapse__icon nav__interactiveIcon"></i>
             </div>
 
             <div class="nav__icons">
-                <div class="nav__icons__icon">
+                <a class="nav__icons__icon" href="#">
+                    <i class="fas fa-home nav__icons__icon__fa nav__icons__icon__active"></i>
+                </a>
+
+                <a class="nav__icons__icon " href="indexpy.html">
                     <i class="fab fa-python nav__icons__icon__fa"></i>
-                </div>
+                </a>
 
-                <div class="nav__icons__icon">
+                <a class="nav__icons__icon" href="indexphp.html">
                     <i class="fab fa-php nav__icons__icon__fa"></i>
-                </div>
+                </a>
 
-                <div class="nav__icons__icon">
-                    <i class="fas fa-search nav__icons__icon__fa"></i>
-                </div>
+                <a class="nav__icons__icon" href="indexwin.html">
+                    <i class="fab fa-windows nav__icons__icon__fa"></i>
+                </a>
+
+                <a class="nav__icons__icon" href="indexsuse.html">
+                    <i class="fab fa-suse nav__icons__icon__fa"></i>
+                </a>
             </div>
         </div>
     </nav>
 
     <main class="main">
         <div class="container">
-            <div class="container__course container__courserPy">
-                <div class="container__course__logo">
-                    <i class="fab fa-python container__course__logo__fa"></i>
+
+            <!-- First card for Python -->
+
+            <div class="container__card container__cardrPy">
+                <div class="container__card__logo">
+                    <i class="fab fa-python container__card__logo__fa"></i>
                 </div>
 
-                <div class="container__course__text">
-                    <div class="container__course__text__heading">
+                <div class="container__card__text">
+                    <div class="container__card__text__heading">
                         <h2>Python</h2>
                     </div>
 
-                    <div class="container__course__text__text">
+                    <div class="container__card__text__text">
                         <p>W tej sekcji znajdziesz niezbędne notatki z lekcji informatyki. Znajdziesz tam równierz
                             notatki z kursów na temat Pythona, które mogą ci pomóc zrozumieć lepiej temat bądź nauczyć
                             się czegoś nowego.</p>
                     </div>
                 </div>
 
-                <div class="container__course__button">
-                    <a class="container__course__button__button" href="indexphp.html"><i class="fas fa-book"></i></a>
+                <div class="container__card__buttons">
+                    <a class="container__card__buttons__button__learn " href="indexpy.html"><i
+                            class="fas fa-book"></i></a>
                 </div>
             </div>
 
-            <div class="container__course container__courserPh">
-                <div class="container__course__logo">
-                    <i class="fab fa-php container__course__logo__fa"></i>
+            <!-- Second card for Php -->
+
+            <div class="container__card container__cardrPh">
+                <div class="container__card__logo">
+                    <i class="fab fa-php container__card__logo__fa"></i>
                 </div>
 
-                <div class="container__course__text">
-                    <div class="container__course__text__heading">
+                <div class="container__card__text">
+                    <div class="container__card__text__heading">
                         <h2>PHP</h2>
                     </div>
 
-                    <div class="container__course__text__text">
+                    <div class="container__card__text__text">
                         <p>W tej sekcji znajdziesz niezbędne notatki z lekcji informatyki. Znajdziesz tam równierz
                             notatki z kursów na temat PHP, które mogą ci pomóc zrozumieć lepiej temat bądź nauczyć
                             się czegoś nowego.</p>
                     </div>
                 </div>
 
-                <div class="container__course__button">
-                    <a class="container__course__button__button" href="indexphp.html"><i class="fas fa-book"></i></a>
+                <div class="container__card__buttons">
+                    <a class="container__card__buttons__button__learn" href="indexphp.html"><i class="fas fa-book"></i></a>
                 </div>
             </div>
+
+            <!-- Third card for Windows -->
+
+            <div class="container__card container__cardrWin">
+                <div class="container__card__logo">
+                    <i class="fab fa-windows container__card__logo__fa"></i>
+                </div>
+
+                <div class="container__card__text">
+                    <div class="container__card__text__heading">
+                        <h2>Windows</h2>
+                    </div>
+
+                    <div class="container__card__text__text">
+                        <p>W tej sekcji znajdziesz niezbędne notatki z lekcji ASW. Znajdziesz tam równierz
+                            notatki do zbliżających się kartkówek, które pomogę ci się lepiej przygotować na kartkówkę.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="container__card__buttons">
+                    <a class="container__card__buttons__button__learn" href="indexphp.html"><i class="fas fa-book"></i></a>
+                </div>
+            </div>
+
+            <!-- Fourth card for Windows -->
+
+            <div class="container__card container__cardrLin">
+                <div class="container__card__logo">
+                    <i class="fab fa-suse container__card__logo__fa"></i>
+                </div>
+
+                <div class="container__card__text">
+                    <div class="container__card__text__heading">
+                        <h2>Linux</h2>
+                    </div>
+
+                    <div class="container__card__text__text">
+                        <p>W tej sekcji znajdziesz niezbędne notatki z lekcji ASL. Znajdziesz tam równierz
+                            notatki do zbliżających się kartkówek, które pomogę ci się lepiej przygotować na kartkówkę.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="container__card__buttons">
+                    <a class="container__card__buttons__button__learn" href="indexphp.html"><i class="fas fa-book"></i></a>
+                </div>
+            </div>
+
+            <!-- End of cards -->
+
         </div>
     </main>
 
