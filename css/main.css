@@ -455,6 +455,13 @@ body {
   cursor: pointer;
 }
 
+.main .container__card__buttons__button__disabled {
+  color: #000;
+  -webkit-box-shadow: 0px 0px 20px #FFFAFA inset;
+          box-shadow: 0px 0px 20px #FFFAFA inset;
+  border: 1px solid #000;
+}
+
 .main .container__card__buttons__button__learn {
   font-size: 1.8rem;
   text-align: center;
