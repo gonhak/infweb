@@ -132,7 +132,7 @@ body {
 }
 
 .nav__icons__icon__active {
-  color: #2fc7b0;
+  color: #ab40c5;
 }
 
 .loginScreen {
@@ -233,9 +233,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -244,6 +244,23 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid #FFFAFA;
   z-index: 2;
+}
+
+.main__homeBtnBox__input {
+  font-size: 1.4rem;
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  border: 2px solid #FFFAFA;
+  -webkit-box-shadow: 0px 0px 20px #000 inset;
+          box-shadow: 0px 0px 20px #000 inset;
+  background-color: #FFFAFA;
+  text-decoration: none;
+  color: #000;
+}
+
+.main__homeBtnBox__input:focus, .main__homeBtnBox__input:active {
+  outline: none;
+  border: 2px solid #FFFAFA;
 }
 
 .main__homeBtnBox__homeBtn {
@@ -255,11 +272,11 @@ body {
   text-decoration: none;
   border-radius: 50%;
   border: none;
-  background-color: #333;
-  color: #FFFAFA;
-  -webkit-box-shadow: 0px 0px 20px black inset;
-          box-shadow: 0px 0px 20px black inset;
-  border: 1px solid #FFFAFA;
+  border: 2px solid #FFFAFA;
+  -webkit-box-shadow: 0px 0px 20px #000 inset;
+          box-shadow: 0px 0px 20px #000 inset;
+  background-color: #FFFAFA;
+  color: #000;
   cursor: pointer;
 }
 
@@ -302,6 +319,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  padding: 2em;
   min-height: 150vh;
 }
 
@@ -332,7 +350,7 @@ body {
 }
 
 .main .container__card__course:first-of-type {
-  margin-top: 20vh;
+  margin-top: calc(20vh - 2em);
 }
 
 .main .container__card__logo {
@@ -453,13 +471,6 @@ body {
           box-shadow: 0px 0px 20px black inset;
   border: 1px solid #FFFAFA;
   cursor: pointer;
-}
-
-.main .container__card__buttons__button__disabled {
-  color: #000;
-  -webkit-box-shadow: 0px 0px 20px #FFFAFA inset;
-          box-shadow: 0px 0px 20px #FFFAFA inset;
-  border: 1px solid #000;
 }
 
 .main .container__card__buttons__button__learn {

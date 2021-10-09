@@ -166,13 +166,30 @@ body {
         position: fixed;
         top: 0;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         width: 100%;
         height: 15vh;
         background-color: rgba(0, 0, 0, .5);
         border-bottom: 1px solid #FFFAFA;
         z-index: 2;
+
+        &__input {
+            font-size: 1.4rem;
+            padding: 0.5em 1em;
+            border-radius: 50px;
+            border: 2px solid #FFFAFA;
+            box-shadow: 0px 0px 20px #000 inset;
+            background-color: #FFFAFA;
+            text-decoration: none;
+            color: #000;
+
+            &:focus,
+            &:active {
+                outline: none;
+                border: 2px solid #FFFAFA;
+            }
+        }
 
         &__homeBtn {
             width: 55px;
@@ -183,10 +200,10 @@ body {
             text-decoration: none;
             border-radius: 50%;
             border: none;
-            background-color: #333;
-            color: #FFFAFA;
-            box-shadow: 0px 0px 20px black inset;
-            border: 1px solid #FFFAFA;
+            border: 2px solid #FFFAFA;
+            box-shadow: 0px 0px 20px #000 inset;
+            background-color: #FFFAFA;
+            color: #000;
             cursor: pointer;
         }
     }
@@ -223,6 +240,7 @@ body {
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
+        padding: 2em;
         min-height: 150vh;
 
         &__card {
@@ -239,7 +257,7 @@ body {
             &__course {
 
                 &:first-of-type {
-                    margin-top: 20vh;
+                    margin-top: calc(20vh - 2em);
                 }
 
                 height: 450px;
