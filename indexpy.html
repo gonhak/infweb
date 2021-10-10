@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Informatyka</title>
     <!-- Ikona strony -->
-    <link rel="icon"
-        href="https://cdn-icons-png.flaticon.com/512/3474/3474360.png">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3474/3474360.png">
     <!-- Ikony -->
     <script src="https://kit.fontawesome.com/4edfb60331.js" crossorigin="anonymous"></script>
     <!-- Czcionki -->
@@ -55,23 +54,38 @@
 
     <main class="main">
 
-        <div class="main__homeBtnBox">
-            <a href="index.html" class="main__homeBtnBox__homeBtn"><i class="fas fa-home "></i></a>
-            
-            <input type="date" class="main__homeBtnBox__input">
+        <div class="main__searchScreen">
+            <div class="main__searchScreen__box">
+                <!-- Error -->
+                <span class="main__searchScreen__box__span">Error, spróbuj ponownie lub kliknij ikonę lupy aby wyjść z wyszukiwarki !</span>
+                <!-- Searching by note name -->
+                <input class="main__searchScreen__box__input main__searchScreen__box__input--name" type="text" placeholder="Podaj nazwę notatki...">
+                <!-- Searching by note date -->
+                <input type="date" class="main__searchScreen__box__input main__searchScreen__box__input--date">
+                <!-- Button for confirming searching -->
+                <button class="main__searchScreen__box__button">Szukaj</button>
+            </div>
+        </div>
+
+        <div class="main__BtnBox">
+            <a href="index.html" class="main__BtnBox__Btn"><i class="fas fa-home "></i></a>
+
+            <i class="fas fa-search main__BtnBox__Btn searchingBtn"></i>
+
+            <i class="fas fa-trash-alt main__BtnBox__Btn main__BtnBox__Btn--trash clearingBtn"></i>
         </div>
 
         <div class="container">
 
             <!-- Zmienne -->
 
-            <div class="container__card container__card__course">
+            <div class="container__card container__card__course" >
                 <div class="container__card__text container__card__text__course">
-                    <h2 class="container__card__text__heading container__card__text__heading__course">Zmienne</h2>
+                    <h2 class="container__card__text__heading container__card__text__heading__course" id="variableCardName">Zmienne</h2>
                     <p class="container__card__text__text container__card__text__text__course">W tej notatce znajdziesz
                         informacje na temat zmiennych w
                         Pythonie.</p>
-                    <p class="container__card__text__data">17.09.2021r</p>
+                    <p class="container__card__text__data" id="variableCardDate">17.09.2021</p>
                     <p class="container__card__text__data">Notatka wykonana przez: Filip Natanek</p>
                 </div>
 
@@ -79,8 +93,7 @@
                     <a target="_blank" href="drive.google.com/drive"
                         class="container__card__buttons__button container__card__buttons__button__disabled"
                         style="pointer-events: none"><i class="fab fa-google-drive"></i></a>
-                    <a target="_blank" href="notes\Py\Variables.docx"
-                        class="container__card__buttons__button"><i
+                    <a target="_blank" href="notes\Py\Variables.docx" class="container__card__buttons__button"><i
                             class="fas fa-file-word"></i></a>
                     <a target="_blank" href="notes.html"
                         class="container__card__buttons__button container__card__buttons__button__disabled"
@@ -92,11 +105,11 @@
 
             <div class="container__card container__card__course">
                 <div class="container__card__text container__card__text__course">
-                    <h2 class="container__card__text__heading container__card__text__heading__course">Funkcje</h2>
+                    <h2 class="container__card__text__heading container__card__text__heading__course" id="functionCardName">Funkcje</h2>
                     <p class="container__card__text__text container__card__text__text__course">W tej notatce znajdziesz
                         informacje na temat funkcji w
                         Pythonie</p>
-                    <p class="container__card__text__data">24.09.2021r</p>
+                    <p class="container__card__text__data" id="functionCardDate">24.09.2021</p>
                     <p class="container__card__text__data">Notatka wykonana przez: Filip Natanek</p>
                 </div>
 
@@ -104,8 +117,7 @@
                     <a target="_blank" href="drive.google.com/drive"
                         class="container__card__buttons__button container__card__buttons__button__disabled"
                         style="pointer-events: none"><i class="fab fa-google-drive"></i></a>
-                    <a target="_blank" href="notes\Py\Function.docx"
-                        class="container__card__buttons__button"><i
+                    <a target="_blank" href="notes\Py\Function.docx" class="container__card__buttons__button"><i
                             class="fas fa-file-word"></i></a>
                     <a target="_blank" href="notes.html"
                         class="container__card__buttons__button container__card__buttons__button__disabled"
@@ -117,11 +129,12 @@
 
             <div class="container__card container__card__course">
                 <div class="container__card__text container__card__text__course">
-                    <h2 class="container__card__text__heading container__card__text__heading__course">Operatory Logiczne</h2>
+                    <h2 class="container__card__text__heading container__card__text__heading__course" id="logicalOperatorsCardName">Operatory Logiczne
+                    </h2>
                     <p class="container__card__text__text container__card__text__text__course">W tej notatce znajdziesz
                         informacje na temat opratorów logicznych wykorzystywanych w
                         Pythonie</p>
-                    <p class="container__card__text__data">1.10.2021r</p>
+                    <p class="container__card__text__data" id="logicalOperatorsCardDate">1.10.2021</p>
                     <p class="container__card__text__data">Notatka wykonana przez: Mateusz Kozieł</p>
                 </div>
 
@@ -129,8 +142,7 @@
                     <a target="_blank" href="drive.google.com/drive"
                         class="container__card__buttons__button container__card__buttons__button__disabled"
                         style="pointer-events: none"><i class="fab fa-google-drive"></i></a>
-                    <a target="_blank" href="notes\Py\LogicalOperators.docx"
-                        class="container__card__buttons__button"><i
+                    <a target="_blank" href="notes\Py\LogicalOperators.docx" class="container__card__buttons__button"><i
                             class="fas fa-file-word"></i></a>
                     <a target="_blank" href="notes.html"
                         class="container__card__buttons__button container__card__buttons__button__disabled"

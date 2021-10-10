@@ -1,35 +1,94 @@
 const nav = document.querySelector('.nav');
 const navBtn = document.querySelector('.nav__colapse');
 const navBtnIcon = document.querySelector('.nav__colapse__icon');
-const loginPage = document.querySelector('.loginScreen');
-const input = document.querySelector('.loginScreen__box__input');
-const loginBtn = document.querySelector('.loginScreen__box__button');
-const passwords = ["fnatanek", "mkoziel", "rrady"];
-let password;
+const searchPage = document.querySelector('.main__searchScreen');
+const searchBtn = document.querySelector('.searchingBtn');
+const inputName = document.querySelector('.main__searchScreen__box__input--name');
+const inputDate = document.querySelector('.main__searchScreen__box__input--date');
+const searchingError = document.querySelector('.main__searchScreen__box__span');
+const searchingBtn = document.querySelector('.main__searchScreen__box__button');
+const clearingBtn = document.querySelector('.clearingBtn');
+const allCards = document.querySelectorAll('.container__card');
 
-const checkingPass = () => {
-    passwords.forEach(el => {
-        if (input.value === el) {
-            password = el;
+const nameArr = [variableCardName, functionCardName, logicalOperatorsCardName];
+const dateArr = [variableCardDate, functionCardDate, logicalOperatorsCardDate];
+
+const searching = () => {
+    if (inputName.value !== "" || inputDate.value !== "") {
+        searchingError.style.opacity = 0;
+
+        if (inputDate.value !== "") {
+            showingDateResults();
+        } else if (inputName.value !== "") {
+            showingNameResults();
+        };
+
+        showingSearchPage();
+        inputName.value = "";
+        inputDate.value = "";
+    } else if (inputName.value === "" || inputDate.value === "") {
+        searchingError.style.opacity = 1;
+        console.log("error");
+    };
+};
+
+const enterPressing = (event) => {
+    if (event.keyCode == 13) {
+        searching();
+    };
+};
+
+const showingNameResults = () => {
+    nameArr.forEach(cardName => {
+        const convertedWord = inputName.value.charAt(0).toUpperCase() + inputName.value.substring(1);
+        let cardContainer = cardName.parentElement
+        let mainCard = cardContainer.parentElement
+
+        if (convertedWord === cardName.innerText) {
+            mainCard.style.display = "flex";
+        } else if (convertedWord !== cardName.innerText) {
+            mainCard.style.display = "none";
+            mainCard.classList.add('hiden');
         }
     });
-
-    if (input.value === password && input.value !== "") {
-        loginPage.style.opacity = 0;
-        loginPage.style.zIndex = '-1';
-    } else if (input.value !== password || input.value == "") {
-        input.value = '';
-        input.placeholder = "Spróbuj ponownie...."
-    };
-
-    password = "";
 };
 
-const checkingPassInput = (event) => {
-    if(event.keyCode == 13){
-        checkingPass();
+const showingDateResults = () => {
+    const newDateFormat = inputDate.value;
+    const newDateCorrectOrder = newDateFormat.split("-").reverse().join("-");
+    const newDateFirstDotes = newDateCorrectOrder.replace('-', '.');
+    const newDatesecondDotes =  newDateFirstDotes.replace('-', '.');
+    const finalDate = newDatesecondDotes;0
+
+    dateArr.forEach(cardDate => {
+        let cardContainer = cardDate.parentElement
+        let mainCard = cardContainer.parentElement
+
+        if (finalDate === cardDate.innerText) {
+            mainCard.style.display = "flex";
+        } else if (finalDate !== cardDate.innerText) {
+            mainCard.style.display = "none";
+            allCards.classList.add('hiden');
+        };
+    });
+};
+
+const showingSearchPage = () => {
+    searchBtn.classList.toggle("active");
+
+    if (searchBtn.classList.contains("active")) {
+        searchPage.style.opacity = 1;
+        searchPage.style.zIndex = '3';
+    } else {
+        searchPage.style.opacity = 0;
+        searchPage.style.zIndex = '-1';
     };
 };
+
+searchingBtn.addEventListener('click', searching);
+inputName.addEventListener('keydown', enterPressing);
+inputDate.addEventListener('keydown', enterPressing);
+searchBtn.addEventListener('click', showingSearchPage);
 
 navBtn.addEventListener('click', () => {
     navBtn.classList.toggle('active');
@@ -43,5 +102,14 @@ navBtn.addEventListener('click', () => {
     };
 });
 
-loginBtn.addEventListener('click', checkingPass);
-input.addEventListener('keydown', checkingPassInput);
+clearingBtn.addEventListener('click', () => {
+    allCards.forEach(card => {
+        if(card.classList.contains('hiden')){
+            card.style.display = "flex";
+            card.classList.remove('hiden');
+        }else{
+            setTimeout(function(){ clearingBtn.style.color = "red" }, 0000);
+            setTimeout(function(){ clearingBtn.style.color = "black" }, 1000);
+        }
+    });
+});

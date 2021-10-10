@@ -95,61 +95,6 @@ body {
     }
 }
 
-.loginScreen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #333;
-    opacity: 1;
-    transition: opacity .7s;
-    z-index: 3;
-
-    &__box {
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        box-sizing: content-box;
-
-        &__input {
-            font-size: 1.4rem;
-            padding: 0.5em 1em;
-            border-radius: 50px;
-            border: 2px solid #ab40c5;
-            background-color: #444;
-            text-decoration: none;
-            color: rgb(193, 188, 235);
-
-            &:focus,
-            &:active {
-                outline: none;
-                border: 2px solid #F783AC;
-            }
-        }
-
-        &__button {
-            font-size: 1.4rem;
-            padding: 0.5em 1em;
-            border-radius: 50px;
-            border: none;
-            background-color: #F783AC;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color .3s;
-
-            &:hover {
-                background-color: #ab40c5;
-            }
-        }
-    }
-}
-
 // main & first blocks
 
 .main {
@@ -159,10 +104,76 @@ body {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    min-height: 100vh;
     z-index: 1;
 
-    &__homeBtnBox {
+    // Searching Screen
+
+    &__searchScreen {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        opacity: 0;
+        transition: opacity .7s;
+        z-index: -1;
+
+        &__box {
+            height: calc(100% - 20vh);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            box-sizing: content-box;
+
+            &__span {
+                text-align: center;
+                color: #FFFAFA;
+                font-size: 1.8rem;
+                width: 75%;
+                opacity: 0;
+                transition: opacity .7s;
+            }
+
+            &__input {
+                width: 75%;
+                font-size: 1.4rem;
+                padding: 0.5em 1em;
+                border-radius: 50px;
+                border: 2px solid #FFFAFA;
+                box-shadow: 0px 0px 20px #000 inset;
+                background-color: #FFFAFA;
+                text-decoration: none;
+                color: #000;
+
+                &:focus,
+                &:active {
+                    outline: none;
+                    border: 2px solid #FFFAFA;
+                }
+            }
+
+            &__button {
+                font-size: 1.4rem;
+                padding: 0.5em 1em;
+                border-radius: 50px;
+                border: none;
+                border: 2px solid #FFFAFA;
+                box-shadow: 0px 0px 20px #000 inset;
+                background-color: #FFFAFA;
+                color: #000;
+                cursor: pointer;
+            }
+        }
+    }
+
+    // Home button & search button
+
+    &__BtnBox {
         position: fixed;
         top: 0;
         display: flex;
@@ -172,7 +183,7 @@ body {
         height: 15vh;
         background-color: rgba(0, 0, 0, .5);
         border-bottom: 1px solid #FFFAFA;
-        z-index: 2;
+        z-index: 4;
 
         &__input {
             font-size: 1.4rem;
@@ -191,7 +202,7 @@ body {
             }
         }
 
-        &__homeBtn {
+        &__Btn {
             width: 55px;
             height: 55px;
             line-height: 55px;
@@ -205,6 +216,10 @@ body {
             background-color: #FFFAFA;
             color: #000;
             cursor: pointer;
+
+            &--trash{
+                transition: color .7s;
+            }
         }
     }
 
@@ -241,7 +256,6 @@ body {
         align-items: center;
         width: 100%;
         padding: 2em;
-        min-height: 150vh;
 
         &__card {
             overflow: hidden;
@@ -253,16 +267,16 @@ body {
             border-radius: 8px;
             height: 500px;
             margin: 2em;
+            transition: display .7s;
 
             &__course {
+                height: 450px;
+                justify-content: space-between;
+                box-shadow: 0px 0px 20px black;
 
                 &:first-of-type {
                     margin-top: calc(20vh - 2em);
                 }
-
-                height: 450px;
-                justify-content: space-between;
-                box-shadow: 0px 0px 20px black;
             }
 
             &__logo {

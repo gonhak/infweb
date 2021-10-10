@@ -135,30 +135,49 @@ body {
   color: #ab40c5;
 }
 
-.loginScreen {
+.main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.main__searchScreen {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: #333;
-  opacity: 1;
+  opacity: 0;
   -webkit-transition: opacity .7s;
   transition: opacity .7s;
-  z-index: 3;
+  z-index: -1;
 }
 
-.loginScreen__box {
-  height: 200px;
+.main__searchScreen__box {
+  height: calc(100% - 20vh);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,58 +195,48 @@ body {
           box-sizing: content-box;
 }
 
-.loginScreen__box__input {
+.main__searchScreen__box__span {
+  text-align: center;
+  color: #FFFAFA;
+  font-size: 1.8rem;
+  width: 75%;
+  opacity: 0;
+  -webkit-transition: opacity .7s;
+  transition: opacity .7s;
+}
+
+.main__searchScreen__box__input {
+  width: 75%;
   font-size: 1.4rem;
   padding: 0.5em 1em;
   border-radius: 50px;
-  border: 2px solid #ab40c5;
-  background-color: #444;
+  border: 2px solid #FFFAFA;
+  -webkit-box-shadow: 0px 0px 20px #000 inset;
+          box-shadow: 0px 0px 20px #000 inset;
+  background-color: #FFFAFA;
   text-decoration: none;
-  color: #c1bceb;
+  color: #000;
 }
 
-.loginScreen__box__input:focus, .loginScreen__box__input:active {
+.main__searchScreen__box__input:focus, .main__searchScreen__box__input:active {
   outline: none;
-  border: 2px solid #F783AC;
+  border: 2px solid #FFFAFA;
 }
 
-.loginScreen__box__button {
+.main__searchScreen__box__button {
   font-size: 1.4rem;
   padding: 0.5em 1em;
   border-radius: 50px;
   border: none;
-  background-color: #F783AC;
-  color: #fff;
+  border: 2px solid #FFFAFA;
+  -webkit-box-shadow: 0px 0px 20px #000 inset;
+          box-shadow: 0px 0px 20px #000 inset;
+  background-color: #FFFAFA;
+  color: #000;
   cursor: pointer;
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
 }
 
-.loginScreen__box__button:hover {
-  background-color: #ab40c5;
-}
-
-.main {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  z-index: 1;
-}
-
-.main__homeBtnBox {
+.main__BtnBox {
   position: fixed;
   top: 0;
   display: -webkit-box;
@@ -243,10 +252,10 @@ body {
   height: 15vh;
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid #FFFAFA;
-  z-index: 2;
+  z-index: 4;
 }
 
-.main__homeBtnBox__input {
+.main__BtnBox__input {
   font-size: 1.4rem;
   padding: 0.5em 1em;
   border-radius: 50px;
@@ -258,12 +267,12 @@ body {
   color: #000;
 }
 
-.main__homeBtnBox__input:focus, .main__homeBtnBox__input:active {
+.main__BtnBox__input:focus, .main__BtnBox__input:active {
   outline: none;
   border: 2px solid #FFFAFA;
 }
 
-.main__homeBtnBox__homeBtn {
+.main__BtnBox__Btn {
   width: 55px;
   height: 55px;
   line-height: 55px;
@@ -278,6 +287,11 @@ body {
   background-color: #FFFAFA;
   color: #000;
   cursor: pointer;
+}
+
+.main__BtnBox__Btn--trash {
+  -webkit-transition: color .7s;
+  transition: color .7s;
 }
 
 .main__h2 {
@@ -320,7 +334,6 @@ body {
           align-items: center;
   width: 100%;
   padding: 2em;
-  min-height: 150vh;
 }
 
 .main .container__card {
@@ -338,6 +351,8 @@ body {
   border-radius: 8px;
   height: 500px;
   margin: 2em;
+  -webkit-transition: display .7s;
+  transition: display .7s;
 }
 
 .main .container__card__course {
