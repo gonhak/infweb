@@ -57,8 +57,9 @@ const showingDateResults = () => {
     const newDateFormat = inputDate.value;
     const newDateCorrectOrder = newDateFormat.split("-").reverse().join("-");
     const newDateFirstDotes = newDateCorrectOrder.replace('-', '.');
-    const newDatesecondDotes =  newDateFirstDotes.replace('-', '.');
-    const finalDate = newDatesecondDotes;0
+    const newDatesecondDotes = newDateFirstDotes.replace('-', '.');
+    const finalDate = newDatesecondDotes;
+    0
 
     dateArr.forEach(cardDate => {
         let cardContainer = cardDate.parentElement
@@ -68,7 +69,7 @@ const showingDateResults = () => {
             mainCard.style.display = "flex";
         } else if (finalDate !== cardDate.innerText) {
             mainCard.style.display = "none";
-            allCards.classList.add('hiden');
+            mainCard.classList.add('hiden');
         };
     });
 };
@@ -104,12 +105,20 @@ navBtn.addEventListener('click', () => {
 
 clearingBtn.addEventListener('click', () => {
     allCards.forEach(card => {
-        if(card.classList.contains('hiden')){
+        let cardContainer = card.parentElement
+        let mainCard = cardContainer.parentElement
+
+
+        if (card.classList.contains('hiden')) {
             card.style.display = "flex";
-            card.classList.remove('hiden');
-        }else{
-            setTimeout(function(){ clearingBtn.style.color = "red" }, 0000);
-            setTimeout(function(){ clearingBtn.style.color = "black" }, 1000);
+            mainCard.classList.remove('hiden');
+        } else {
+            setTimeout(function () {
+                clearingBtn.style.color = "red"
+            }, 0000);
+            setTimeout(function () {
+                clearingBtn.style.color = "black"
+            }, 1000);
         }
     });
 });

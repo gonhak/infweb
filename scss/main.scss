@@ -106,6 +106,58 @@ body {
     width: 100%;
     z-index: 1;
 
+    // Home button & search button
+
+    &__BtnBox {
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(0, 0, 0, .5);
+        border-bottom: 1px solid #FFFAFA;
+        z-index: 4;
+
+        &__input {
+            font-size: 1.4rem;
+            padding: 0.5em 1em;
+            border-radius: 50px;
+            border: 2px solid #FFFAFA;
+            box-shadow: 0px 0px 20px #000 inset;
+            background-color: #FFFAFA;
+            text-decoration: none;
+            color: #000;
+
+            &:focus,
+            &:active {
+                outline: none;
+                border: 2px solid #FFFAFA;
+            }
+        }
+
+        &__Btn {
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+            font-size: 2rem;
+            text-decoration: none;
+            border-radius: 50%;
+            border: none;
+            border: 2px solid #FFFAFA;
+            box-shadow: 0px 0px 20px #000 inset;
+            background-color: #FFFAFA;
+            color: #000;
+            cursor: pointer;
+
+            &--trash {
+                transition: color .7s;
+            }
+        }
+    }
+
     // Searching Screen
 
     &__searchScreen {
@@ -171,59 +223,6 @@ body {
         }
     }
 
-    // Home button & search button
-
-    &__BtnBox {
-        position: fixed;
-        top: 0;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        height: 15vh;
-        background-color: rgba(0, 0, 0, .5);
-        border-bottom: 1px solid #FFFAFA;
-        z-index: 4;
-
-        &__input {
-            font-size: 1.4rem;
-            padding: 0.5em 1em;
-            border-radius: 50px;
-            border: 2px solid #FFFAFA;
-            box-shadow: 0px 0px 20px #000 inset;
-            background-color: #FFFAFA;
-            text-decoration: none;
-            color: #000;
-
-            &:focus,
-            &:active {
-                outline: none;
-                border: 2px solid #FFFAFA;
-            }
-        }
-
-        &__Btn {
-            width: 55px;
-            height: 55px;
-            line-height: 55px;
-            text-align: center;
-            font-size: 2rem;
-            text-decoration: none;
-            border-radius: 50%;
-            border: none;
-            border: 2px solid #FFFAFA;
-            box-shadow: 0px 0px 20px #000 inset;
-            background-color: #FFFAFA;
-            color: #000;
-            cursor: pointer;
-
-            &--trash{
-                transition: color .7s;
-            }
-        }
-    }
-
-
     &__h2 {
         font-size: 2rem;
         padding: 0.5em;
@@ -275,7 +274,7 @@ body {
                 box-shadow: 0px 0px 20px black;
 
                 &:first-of-type {
-                    margin-top: calc(20vh - 2em);
+                    margin-top: calc(100px + 2em);
                 }
             }
 
@@ -394,22 +393,22 @@ body {
         display: block;
     }
 
-    .loginScreen {
-        &__box {
-            &__input {
-                font-size: 1.8rem;
-            }
-
-            &__button {
-                font-size: 1.8rem;
-            }
-        }
-    }
-
     .main {
         width: calc(100% - 100px);
 
-        &__homeBtnBox {
+        &__searchScreen {
+            &__box {
+                &__input {
+                    font-size: 1.8rem;
+                }
+
+                &__button {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        &__BtnBox {
             display: none;
         }
 
@@ -462,14 +461,16 @@ body {
 }
 
 @media(min-width: 450px) {
-    .loginScreen {
-        &__box {
-            &__input {
-                font-size: 1.6rem;
-            }
+    .main {
+        &__main__searchScreen {
+            &__box {
+                &__input {
+                    font-size: 1.6rem;
+                }
 
-            &__button {
-                font-size: 1.6rem;
+                &__button {
+                    font-size: 1.6rem;
+                }
             }
         }
     }
