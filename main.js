@@ -10,8 +10,8 @@ const searchingBtn = document.querySelector('.main__searchScreen__box__button');
 const clearingBtn = document.querySelector('.clearingBtn');
 const allCards = document.querySelectorAll('.container__card');
 
-const nameArr = [variableCardName, functionCardName, logicalOperatorsCardName];
-const dateArr = [variableCardDate, functionCardDate, logicalOperatorsCardDate];
+const nameArr = [variableCardName, functionCardName, logicalOperatorsCardName, wordIndexCardName, projectionCardName, inputCardName];
+const dateArr = [variableCardDate, functionCardDate, logicalOperatorsCardDate, wordIndexCardDate, projectionCardDate, inputCardDate];
 
 const searching = () => {
     if (inputName.value !== "" || inputDate.value !== "") {
@@ -59,7 +59,6 @@ const showingDateResults = () => {
     const newDateFirstDotes = newDateCorrectOrder.replace('-', '.');
     const newDatesecondDotes = newDateFirstDotes.replace('-', '.');
     const finalDate = newDatesecondDotes;
-    0
 
     dateArr.forEach(cardDate => {
         let cardContainer = cardDate.parentElement
